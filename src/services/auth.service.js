@@ -1,7 +1,6 @@
 import { User } from "../models/User.js";
 import { signAccessToken, signRefreshToken } from "../utils/jwt.js";
-import { AppError } from "../utils/errors";
-import { password } from "pg/lib/defaults";
+import { AppError } from "../utils/errors.js";
 
 export async function register({ name, email, password}) {
     const exist = await User.findOne({email});
